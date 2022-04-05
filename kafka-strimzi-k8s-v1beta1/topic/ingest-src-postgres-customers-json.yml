@@ -2,7 +2,7 @@ apiVersion: kafka.strimzi.io/v1alpha1
 kind: "KafkaConnector"
 metadata:
   # connector name
-  name: "ingest-src-postgresql-customers-json-3200e849928721"
+  name: "ingest-src-postgresql-customers-json-123e4"
   labels:
     # kafka connect [cluster] name
     strimzi.io/cluster: igtiedh
@@ -14,9 +14,9 @@ spec:
     value.converter: org.apache.kafka.connect.json.JsonConverter
     key.converter.schemas.enable: true
     value.converter.schemas.enable: true
-    connection.url: "jdbc:postgresql://host:port/database"
-    connection.user: "postgres"
-    connection.password: ""
+    connection.url: "jdbc:postgresql://<endereço-do-seu-banco>:5432/postgres"
+    connection.user: "helton"
+    connection.password: "<senha-do-banco>"
     connection.attempts: "2"
     query: "SELECT * FROM public.customers"
     mode: "incrementing"

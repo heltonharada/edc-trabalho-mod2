@@ -3,4 +3,4 @@
 aws ecr create-repository \
     --repository-name igti-repository \
     --image-scanning-configuration scanOnPush=true \
-    --region us-east-2
+    --region us-west-2
